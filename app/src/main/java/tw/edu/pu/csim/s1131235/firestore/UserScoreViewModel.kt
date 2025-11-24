@@ -20,5 +20,19 @@ class UserScoreViewModel : ViewModel() {
         }
     }
 
+    fun updateUser(userScore: UserScoreModel) {
+        // 在 viewModelScope 中啟動一個協程
+        viewModelScope.launch {
+            // 呼叫 suspend function，並等待結果
+            message = userScoreRepository.updateUser(userScore)
+        }
+    }
 
+    fun deleteUser(userScore: UserScoreModel) {
+        // 在 viewModelScope 中啟動一個協程
+        viewModelScope.launch {
+            // 呼叫 suspend function，並等待結果
+            message = userScoreRepository.updateUser(userScore)
+        }
+    }
 }
